@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.annotation.RequiresApi
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -27,6 +28,7 @@ import java.net.URL
 class MainActivity : ComponentActivity(), NewsItemClicked {
     private lateinit var mAdapter: NewsListAdapter
     private var isValueInverted = false
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,6 +57,7 @@ class MainActivity : ComponentActivity(), NewsItemClicked {
             progessbar.visibility = View.INVISIBLE
         }
     }
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun fetchData() {
         var progessbar: ProgressBar = findViewById(R.id.pbLoading)
         Thread {
@@ -94,7 +97,8 @@ class MainActivity : ComponentActivity(), NewsItemClicked {
                             it.title ?: "",
                             it.author ?: "",
                             it.url ?: "",
-                            it.urlToImage ?: ""
+                            it.urlToImage ?: "",
+                            it.publishedAt?:""
                         )
                         newsArray.add(news)
                     }

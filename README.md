@@ -14,7 +14,7 @@ This Android app is designed to fetch news from a News API and display them in a
 
 ## Screenshots
 
-![image](https://github.com/Sharathkumarv07/Kotlin/assets/159021190/62e0ee60-7194-4ef3-a7d2-1453533c3baf)
+![image](https://github.com/Sharathkumarv07/Kotlin/assets/159021190/b43fc5b9-eba6-4948-b2e0-d0536b2f271f)       ![image](https://github.com/Sharathkumarv07/Kotlin/assets/159021190/7329c22e-c8eb-49bd-9d77-49e43fcd821a)
 
 
 ## Tech Stack

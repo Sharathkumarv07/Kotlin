@@ -42,7 +42,25 @@ class NewsListAdapter(private val listener : NewsItemClicked): RecyclerView.Adap
     {
         if (updatedNews != null) {
             items.clear()
-            items.addAll(updatedNews)
+            items.addAll(updatedNews.sortedBy{it.title})
+            Handler(Looper.getMainLooper()).post {
+                // UI operations
+                notifyDataSetChanged()
+            }
+        }
+    }
+    fun sort(boolean: Boolean)
+    {
+        if (items != null) {
+             val sortedNewsArray : List<News>
+            if (boolean){
+                 sortedNewsArray = items.sortedByDescending { it.title }
+            }
+          else{
+                 sortedNewsArray = items.sortedBy { it.title }
+          }
+            items.clear()
+            items.addAll(sortedNewsArray)
             Handler(Looper.getMainLooper()).post {
                 // UI operations
                 notifyDataSetChanged()
